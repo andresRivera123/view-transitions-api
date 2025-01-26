@@ -1,0 +1,39 @@
+---
+import BookItem from "./BookItem.astro";
+
+const books = [
+  {
+    id: "dont-make-me-think",
+    title: "Don't Make Me Think: Sentido común para la usabilidad web",
+    img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1711564661i/18197267.jpg",
+  },
+  {
+    id: "clean-code",
+    title: "Clean code: Manual de desarrollo ágil de software",
+    img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436202607i/3735293.jpg",
+  },
+  {
+    id: "lean-ux",
+    title:
+      "Lean UX: Aplicación de los principios Lean para mejorar la experiencia del usuario",
+    img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1381355830i/13436116.jpg",
+  },
+  {
+    id: "eloquent-javascript",
+    title: "Una introducción moderna a la programación",
+    img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1308260856i/8910666.jpg",
+  },
+];
+---
+
+<ul class="grid grid-cols-2 md:grid-cols-3 gap-5 px-4">
+  {
+    books.map(({ id, title, img }) => {
+      return (
+        <li>
+          <BookItem id={id} title={title} img={img} />
+        </li>
+      );
+    })
+  }
+</ul>
